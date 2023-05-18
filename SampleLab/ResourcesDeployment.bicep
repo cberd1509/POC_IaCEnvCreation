@@ -39,7 +39,7 @@ resource networkSecurityGroup 'Microsoft.Network/networkSecurityGroups@2022-11-0
   }
 }
 
-module factoryioMachine 'Resources/FactoryIOVM.bicep' = {
+module factoryioMachine 'Resources/ServiceVM.bicep' = {
   name: '${labName}-factoryioMachine'
   params: {
     labName: labName

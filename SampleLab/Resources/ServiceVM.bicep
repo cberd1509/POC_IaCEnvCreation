@@ -5,7 +5,7 @@ param nsgId string
 //output subnetName string = '${subnetName}'
 
 resource networkInterface 'Microsoft.Network/networkInterfaces@2022-11-01' = {
-  name: '${labName}-factoryio-nic'
+  name: '${labName}-servicevm-nic'
   location: location
   properties: {
     ipConfigurations: [
@@ -27,7 +27,7 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2022-11-01' = {
 }
 
 resource vm 'Microsoft.Compute/virtualMachines@2021-11-01' = {
-  name: '${labName}-factoryio'
+  name: '${labName}-servicevm'
   location: location
   properties: {
     hardwareProfile: {
@@ -55,7 +55,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2021-11-01' = {
       ]
     }
     osProfile: {
-      computerName: '${labName}-factoryio'
+      computerName: '${labName}-servicevm'
       adminUsername: 'adminaccount'
       adminPassword: 'P@ssw0rd1234'
     }
